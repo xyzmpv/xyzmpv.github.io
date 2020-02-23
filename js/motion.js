@@ -28,6 +28,7 @@ NexT.motion.integrator = {
 
 NexT.motion.middleWares = {
   logo: function(integrator) {
+    integrator.next();
     var sequence = [];
     var brand = document.querySelector('.brand');
     var image = document.querySelector('.custom-logo-image');
@@ -87,7 +88,7 @@ NexT.motion.middleWares = {
       sequence[sequence.length - 1].o.complete = function() {
         integrator.next();
       };
-      Velocity.RunSequence(sequence);
+      $.Velocity.RunSequence(sequence);
     } else {
       integrator.next();
     }
